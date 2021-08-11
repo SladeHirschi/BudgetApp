@@ -1,13 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
+  const [pressed, setPressed] = useState(false)
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text>Testing this text here</Text>
+      <Button variant="primary" onPress={() => setPressed(!pressed)} title="Change Background"></Button>
+      {/* <StatusBar style="auto" /> */}
+    </SafeAreaView>
   );
 }
 
